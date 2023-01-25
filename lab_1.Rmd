@@ -1,0 +1,135 @@
+---
+output: 
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+---
+
+# Lab 1: Data vis, wrangling, and programming (45 pts)
+
+You can find the repo for this lab here:
+
+https://github.com/tpcovino/lab_1
+
+As we have done previously, go to Code, download zip and put folder on your computer. Open the project in that folder and then open the .Rmd. Remember that opening the project from that folder will set that folder as the "working directory". Doing so means that when you read in your data, R will "look" in the right place to find it. Remember to rename the .Rmd file with your name in the file name.  
+
+This lab covers workflow and functions that you have seen and a few things that haven't been explicitly demonstrated. Using functions that haven't been explicitly demonstrated will help you in developing your ability to use new functions and workflows. Understanding how to utilize resources like Stack Overflow and package vignettes will help you solve coding problems. You can also get function and package help from the console by typing "?". For example, you could type "?ggplot" or "?tidyverse" into the console and a help window will appear in the lower right. Also, when you are searching for coding help it is useful to be explicit about whether you are in base R or tidyverse. 
+
+## Problem 1 (5 pts)
+
+Load the tidyverse and lubridate libraries.
+```{r}
+
+```
+
+
+Read in the pine_nfdr csv using read_csv(). Name this "pine_nfdr".
+```{r}
+
+
+```
+
+
+Make a plot with the date on the x axis, discharge on the y axis. Show the discharge of the two watersheds as a line, coloring by watershed (StationID). Use a theme to remove the grey background. Label the axes appropriately with labels and units. Bonus: change the title of the legend to "Gauging Station"
+```{r}
+
+
+```
+
+
+## Problem 2 (10 pts)
+
+Make a boxplot to compare the discharge of Pine to NFDR for February 2010.
+
+Hint: use the pipe operator and the filter() function.
+
+```{r}
+
+
+```
+
+
+## Problem 3 (10 pts)
+
+Read in the flashy csv. Name this "flashy".
+
+```{r}
+
+```
+
+
+Create a new df called flashy_west that includes data for: MT, ID, WY, UT, CO, NV, AZ, and NM
+
+```{r}
+
+```
+
+
+For only sites in flashy_west: Plot PET (Potential Evapotranspiration) on the X axis and RBI (flashiness index) on the Y axis. Color the points based on what state they are in. Use the linedraw ggplot theme.
+
+```{r}
+
+```
+
+
+## Problem 4 (10 pts)
+
+We want to look at the amount of snow for each site in the flashy_west df. Problem is, we are only given the average amount of total precip (PPTAVG_BASIN) and the percentage of snow (SNOW_PCT_PRECIP).
+
+Create a new column in the df called "snow_avg_basin" and make it equal to the average total precip times the percentage of snow (careful with the percentage number).
+
+```{r}
+
+```
+
+
+Make a barplot showing the amount of snow for each site in MT. Put station name on the x axis and snow amount on the y. You have to add something to geom_bar() to use it for a 2 variable plot. *Use "?geom_bar" in the console and the internet to investigate.*
+
+```{r}
+
+```
+
+
+The x axis of the resulting plot looks terrible! Rotate the X axis labels so we can read them.
+
+```{r}
+
+```
+
+
+## Problem 5 (5 pts)
+
+Create a new tibble called "flashy_west_thin" that contains the min, max, and mean PET for each state in flashy_west. Sort/arrange the tibble by mean PET from high to low. Give your columns meaningful names within the summarize function or using rename(). *You haven't seen rename yet*. Use ?rename in the console or search for examples. When searching you need to indicate that you are looking for "tidyverse rename". Rename is part of dplyr, which is part of tidyverse.  
+
+Be sure your code outputs the tibble.
+
+```{r}
+
+```
+
+
+## Problem 6 (5 pts)
+
+Take the tibble from problem 5 and create a new df by first creating a new column that is the Range of the PET (max PET - min PET). Then get rid of the max PET and min PET columns so the tibble just has columns for State, mean_PET, and PET_range.
+
+Be sure your code outputs the tibble.
+
+```{r}
+
+```
+
+
+Save new_tib_thin as .csv files to your folder for this lab using the write_csv function. To get help on this function type "?write_csv" into the console. 
+
+```{r}
+
+```
+
+
+## Summary
+
+- How long did this lab take you?
+- Is there anything in particular you would like more practice with?
+- Knit this .Rmd as an .html and submit your .html on D2L. 
+
