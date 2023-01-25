@@ -1489,8 +1489,8 @@ border-radius: 0px;
 
 <div id="lab-1-data-vis-wrangling-and-programming-45-pts" class="section level1">
 <h1>Lab 1: Data vis, wrangling, and programming (45 pts)</h1>
-<p>You can find the repo for this lab here:</p>
-<p><a href="https://github.com/tpcovino/lab_1" class="uri">https://github.com/tpcovino/lab_1</a></p>
+<p><a href="https://github.com/tpcovino/lab_1" target="_blank"><strong>You can find the repo for this lab
+here</strong></a></p>
 <p>As we have done previously, go to Code, download zip and put folder
 on your computer. Open the project in that folder and then open the
 .Rmd. Remember that opening the project from that folder will set that
@@ -1509,7 +1509,7 @@ right. Also, when you are searching for coding help it is useful to be
 explicit about whether you are in base R or tidyverse.</p>
 <div id="problem-1-5-pts" class="section level2">
 <h2>Problem 1 (5 pts)</h2>
-<p>Load the tidyverse and lubridate libraries.</p>
+<p>Load the tidyverse library.</p>
 <p>Read in the pine_nfdr csv using read_csv(). Name this
 “pine_nfdr”.</p>
 <p>Make a plot with the date on the x axis, discharge on the y axis.
@@ -1552,33 +1552,42 @@ labels so we can read them.</p>
 </div>
 <div id="problem-5-5-pts" class="section level2">
 <h2>Problem 5 (5 pts)</h2>
-<p>Create a new tibble called “flashy_west_thin” that contains the min,
+<p>Create a new tibble called “flashy_west_sum” that contains the min,
 max, and mean PET for each state in flashy_west. Sort/arrange the tibble
 by mean PET from high to low. Give your columns meaningful names within
 the summarize function or using rename(). <em>You haven’t seen rename
 yet</em>. Use ?rename in the console or search for examples. When
 searching you need to indicate that you are looking for “tidyverse
 rename”. Rename is part of dplyr, which is part of tidyverse.</p>
-<p>Be sure your code outputs the tibble.</p>
+<p>Create a barplot from flashy_west_sum with max_pet on the y and state
+on the x.</p>
 </div>
 <div id="problem-6-5-pts" class="section level2">
 <h2>Problem 6 (5 pts)</h2>
-<p>Take the tibble from problem 5 and create a new df by first creating
-a new column that is the Range of the PET (max PET - min PET). Then get
-rid of the max PET and min PET columns so the tibble just has columns
-for State, mean_PET, and PET_range.</p>
-<p>Be sure your code outputs the tibble.</p>
-<p>Save new_tib_thin as .csv files to your folder for this lab using the
-write_csv function. To get help on this function type “?write_csv” into
-the console.</p>
+<p>Take the tibble from problem 5 and create a new df “flashy_west_new”
+by first creating a new column that is the Range of the PET (max PET -
+min PET). Then get rid of the max PET and min PET columns so the tibble
+just has columns for State, mean_PET, and PET_range.</p>
+<p>Using flashy_west_new make an interactive ggplotly with mean_pet on
+the x and range_pet on the y. Color by state and label axes.</p>
+<p>Save flashy_west_new as .csv files to your folder for this lab using
+the write_csv function. To get help on this function type “?write_csv”
+into the console.</p>
 </div>
 <div id="summary" class="section level2">
 <h2>Summary</h2>
 <ul>
-<li>How long did this lab take you?</li>
-<li>Is there anything in particular you would like more practice
-with?</li>
-<li>Knit this .Rmd as an .html and submit your .html on D2L.</li>
+<li><p>Using the figues from problems 5 &amp; 6 comment on the pattern
+in max PET across the western states. What climatological variable is
+likely driving this pattern? Do you think the values actual
+evapotranspiration (AET) would be the same or different from the values
+of potential evapotranspiration (PET)? In which state would AET and PET
+potentially be most different and why?</p></li>
+<li><p>How long did this lab take you?</p></li>
+<li><p>Is there anything in particular you would like more practice
+with?</p></li>
+<li><p>Knit this .Rmd as an .html and submit your lab_1_your_name.html
+on D2L.</p></li>
 </ul>
 </div>
 </div>
