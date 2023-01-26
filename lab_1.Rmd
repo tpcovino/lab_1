@@ -6,7 +6,7 @@ output:
     toc_float: true
 ---
 
-# Lab 1: Data vis, wrangling, and programming (45 pts)
+# Lab 1: Data vis, wrangling, and programming (35 pts)
 
 [**You can find the repo for this lab here**](https://github.com/tpcovino/lab_1){target="_blank"}
 
@@ -36,7 +36,7 @@ Make a plot with the date on the x axis, discharge on the y axis. Show the disch
 ```
 
 
-## Problem 2 (10 pts)
+## Problem 2 (5 pts)
 
 Make a boxplot to compare the discharge of Pine to NFDR for February 2010.
 
@@ -48,7 +48,7 @@ Hint: use the pipe operator and the filter() function.
 ```
 
 
-## Problem 3 (10 pts)
+## Problem 3 (5 pts)
 
 Read in the flashy csv. Name this "flashy".
 
@@ -66,7 +66,7 @@ Create a new df called flashy_west that includes data for: MT, ID, WY, UT, CO, N
 ```
 
 
-For only sites in flashy_west: Plot PET (Potential Evapotranspiration) on the X axis and RBI (flashiness index) on the Y axis. Color the points based on what state they are in. Use the linedraw ggplot theme.
+Using flashy_west: Plot PET (Potential Evapotranspiration) on the X axis and RBI (flashiness index) on the Y axis. Color the points based on what state they are in. Use the linedraw ggplot theme.
 
 ```{r}
 
@@ -75,7 +75,7 @@ For only sites in flashy_west: Plot PET (Potential Evapotranspiration) on the X 
 ```
 
 
-## Problem 4 (10 pts)
+## Problem 4 (5 pts)
 
 We want to look at the amount of snow for each site in the flashy_west df. Problem is, we are only given the average amount of total precip (PPTAVG_BASIN) and the percentage of snow (SNOW_PCT_PRECIP).
 
@@ -154,10 +154,9 @@ Save flashy_west_new as .csv files to your folder for this lab using the write_c
 ```
 
 
+## Summary (5 pts)
 
-## Summary
-
-- Using the figues from problems 5 & 6 comment on the pattern in max PET across the western states. What climatological variable is likely driving this pattern? Do you think the values actual evapotranspiration (AET) would be the same or different from the values of potential evapotranspiration (PET)? In which state would AET and PET potentially be most different and why? 
+- Using the figues from problems 5 & 6 comment on the pattern in max PET across the western states. What climatological variable is likely driving this pattern? Do you think the values of actual evapotranspiration (AET) would be the same or different from the values of potential evapotranspiration (PET)? In which state would AET and PET potentially be most different and why? 
 
 PET Reading:
 
@@ -165,7 +164,11 @@ PET Reading:
 
 [Vargas Zepetello et al. 2019b](images/VargasZeppetello_etal_2019b.pdf){target="_blank"} read Abstract and Introduction sections
 
+
+## Feeback
 - How long did this lab take you?
 - Is there anything in particular you would like more practice with?
-- Knit this .Rmd as an .html and submit your lab_1_your_name.html on D2L. 
+
+## Deliverables
+- Knit this .Rmd as an .html and submit your lab_1_your_name.Rmd and lab_1_your_name.html on D2L. 
 
