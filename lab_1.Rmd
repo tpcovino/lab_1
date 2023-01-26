@@ -74,6 +74,12 @@ Using flashy_west: Plot PET (Potential Evapotranspiration) on the X axis and RBI
 
 ```
 
+Using flashy_west make a facet wrap with PET on the x and RBI on the y. Facet by state.
+
+```{r}
+
+```
+
 
 ## Problem 4 (5 pts)
 
