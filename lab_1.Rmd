@@ -18,7 +18,8 @@ This lab covers workflow and functions that you have seen and a few things that 
 
 Load the tidyverse library.
 ```{r}
-
+library(tidyverse)
+#install.packages("tidyverse")
 ```
 
 
