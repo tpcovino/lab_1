@@ -148,8 +148,11 @@ Create a new tibble called "flashy_west_sum" that contains the min, max, and mea
 flashy_west_sum <- flashy_west %>% 
   group_by(STATE) %>% 
   summarize(min_pet = min(PET), max_pet = max(PET), mean_pet = mean(PET)) %>% 
-  rename(State = STATE)
-  
+  rename(State = STATE) %>% 
+  arrange(desc(mean_pet))
+
+
+
 
 ```
 
@@ -178,7 +181,7 @@ Take the tibble from problem 5 and create a new df "flashy_west_new" by first cr
 ```{r}
 flashy_west_new <- flashy_west_sum %>%
   mutate(range_pet = max_pet - min_pet) %>% 
-  select(mean_pet, range_pet)
+  select(State, mean_pet, range_pet)
 
 # or 
 
