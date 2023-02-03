@@ -36,7 +36,8 @@ pine_nfdr %>%
   ggplot(aes(x = datetime, y = cfs, color = StationID)) +
   geom_line() +
   theme_linedraw() +
-  labs(x = "Date", y = "Flow (cfs)", color = "Gauging Station")
+  labs(x = "Date", y = "Flow (cfs)", color = "Gauging Station", caption = "Figure1. This is a caption") +
+  theme(plot.caption = element_text(hjust = -0.15, size = 16))
 
 
 ```
