@@ -6,7 +6,7 @@ output:
     toc_float: true
 ---
 
-# Lab 1: Data vis, wrangling, and programming (35 pts)
+# Lab 1: Data vis, wrangling, and programming (12 pts)
 
 [**You can find the repo for this lab here**](https://github.com/tpcovino/lab_1){target="_blank"}
 
@@ -14,7 +14,7 @@ As we have done previously, go to Code, download zip and put folder on your comp
 
 This lab covers workflow and functions that you have seen and a few things that haven't been explicitly demonstrated. Using functions that haven't been explicitly demonstrated will help you in developing your ability to use new functions and workflows. Understanding how to utilize resources like Stack Overflow and package vignettes will help you solve coding problems. You can also get function and package help from the console by typing "?". For example, you could type "?ggplot" or "?tidyverse" into the console and a help window will appear in the lower right. Also, when you are searching for coding help it is useful to be explicit about whether you are in base R or tidyverse. 
 
-## Problem 1 (5 pts)
+## Problem 1 (1 pts)
 
 Setting up knitr options
 ```{r}
@@ -31,7 +31,7 @@ library(tidyverse)
 
 Read in the pine_nfdr csv using read_csv(). Name this "pine_nfdr".
 ```{r}
-
+pine_nfdr <- read_csv("pine_nfdr.csv")
 
 ```
 
@@ -39,11 +39,17 @@ Read in the pine_nfdr csv using read_csv(). Name this "pine_nfdr".
 Make a plot with the date on the x axis, discharge on the y axis. Show the discharge of the two watersheds as a line, coloring by watershed (StationID). Use a theme to remove the grey background. Label the axes appropriately with labels and units. Bonus: change the title of the legend to "Gauging Station"
 ```{r}
 
+pine_nfdr %>% 
+  ggplot(aes(x = datetime, y = cfs, color = StationID)) +
+  geom_line()
+
+
+
 
 ```
 
 
-## Problem 2 (5 pts)
+## Problem 2 (1 pts)
 
 Make a boxplot to compare the discharge of Pine to NFDR for February 2010.
 
@@ -55,7 +61,7 @@ Hint: use the pipe operator and the filter() function.
 ```
 
 
-## Problem 3 (5 pts)
+## Problem 3 (2 pts)
 
 Read in the flashy csv. Name this "flashy".
 
@@ -88,7 +94,7 @@ Using flashy_west make a facet wrap with PET on the x and RBI on the y. Facet by
 ```
 
 
-## Problem 4 (5 pts)
+## Problem 4 (2 pts)
 
 We want to look at the amount of snow for each site in the flashy_west df. Problem is, we are only given the average amount of total precip (PPTAVG_BASIN) and the percentage of snow (SNOW_PCT_PRECIP).
 
@@ -119,7 +125,7 @@ The x axis of the resulting plot looks terrible! Rotate the X axis labels so we 
 ```
 
 
-## Problem 5 (5 pts)
+## Problem 5 (2 pts)
 
 Create a new tibble called "flashy_west_sum" that contains the min, max, and mean PET for each state in flashy_west. Sort/arrange the tibble by mean PET from high to low. Give your columns meaningful names within the summarize function or using rename(). *You haven't seen rename yet*. Use ?rename in the console or search for examples. When searching you need to indicate that you are looking for "tidyverse rename". Rename is part of dplyr, which is part of tidyverse.  
 
@@ -139,7 +145,7 @@ Create a barplot from flashy_west_sum with max_pet on the y and state on the x.
 
 
 
-## Problem 6 (5 pts)
+## Problem 6 (2 pts)
 
 Take the tibble from problem 5 and create a new df "flashy_west_new" by first creating a new column that is the Range of the PET (max PET - min PET). Then get rid of the max PET and min PET columns so the tibble just has columns for State, mean_PET, and PET_range.
 
@@ -167,7 +173,7 @@ Save flashy_west_new as .csv files to your folder for this lab using the write_c
 ```
 
 
-## Summary (5 pts)
+## Summary (2 pts)
 
 - Using the figues from problems 5 & 6 comment on the pattern in max PET across the western states. What climatological variable is likely driving this pattern? Do you think the values of actual evapotranspiration (AET) would be the same or different from the values of potential evapotranspiration (PET)? In which state would AET and PET potentially be most different and why? 
 
